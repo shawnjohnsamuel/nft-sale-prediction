@@ -133,3 +133,6 @@ dmypy.json
 
 # Keys
 keys.py
+
+# Data
+1_data_initial.csv
