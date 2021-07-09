@@ -175,9 +175,9 @@ def arima_eval(name, ts, train, test, model, periods=0, log=False, library='pmda
 
 
 
-########################
-#  PHASE 3 - SPOTIFY  #
-########################
+###########################################
+#  PHASE 3 - SPOTIFY  &  CAPSTONE - NFTs  #
+###########################################
 
 
 def crossval(estimator, X, y, cv=5, scoring='precision'):
@@ -226,7 +226,7 @@ def evaluate(name, estimator, X_train, X_test, y_train, y_test, use_decision_fun
     # plot test confusion matrix
     plot_confusion_matrix(estimator, X_test, y_test,
                           values_format=",.0f",
-                          display_labels = ['Not Popular', 'Popular'])                            
+                          display_labels = ['Will Not Sell', 'Will Sell'])                            
     plt.title('Confusion Matrix (Test Set)')
     plt.show()
     
@@ -271,7 +271,7 @@ def plot_feature_imp(estimator, X):
     names = [feat_names[i] for i in indices]
 
     # Create plot
-    plt.figure(figsize = [8,5])
+    plt.figure(figsize = [16,6])
 
     # Create plot title
     plt.title("Feature Importance")
