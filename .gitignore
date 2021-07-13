@@ -136,4 +136,6 @@ keys.py
 
 # Data
 1_data_initial.csv
+1b_data_initial_validation_set.csv
 2_data_condensed.csv
+2b_data_condensed_validation_set.csv
