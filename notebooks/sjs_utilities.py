@@ -219,7 +219,7 @@ def evaluate(name, estimator, X_train, X_test, y_train, y_test, use_decision_fun
         test_out = estimator.decision_function(X_test)
     elif use_decision_function == 'no':
         train_out = estimator.predict_proba(X_train)[:, 1] # proba for the 1 class
-        test_out = estimator.predict_proba(X_test)[:, 1]
+        test_out = estimator.predict_proba(X_test)[:, 1] # proba for the 1 class
     else:
         raise Exception ("The value for use_decision_function should be 'skip', 'yes' or 'no'.")
       
@@ -243,7 +243,7 @@ def evaluate(name, estimator, X_train, X_test, y_train, y_test, use_decision_fun
     new_row.append(name)
     new_row.append(f"{precision_score(y_test, test_preds)*100:.2f}%")
     new_row.append(f"{f1_score(y_test, test_preds)*100:.2f}%")
-    new_row.append(f"{roc_auc_score(y_test, test_preds)*100:.2f}%")
+    new_row.append(f"{roc_auc_score(y_test, test_out)*100:.2f}%")
 
     eval_metrics.loc[len(eval_metrics.index)] = new_row
     display(eval_metrics.sort_index(ascending=False, axis=0))
