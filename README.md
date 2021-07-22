@@ -38,8 +38,9 @@ Through various methods of evaluating feature importance, *'asset_contract.total
 Future work suggestions include:
 
 1. Gathering data with a wider variety to train the model
-2. Moving beyond binary features and also binary result. A regression model with an actual price prediction would be very valuabe
-2. Building a deployed user interface where an OpenSea NFT ID could be entered and prediction returned
+2. Moving beyond binary features and build out richer features based on importance 
+3. Build a regression model with an actual price prediction
+4. Building a deployed user interface where an OpenSea NFT ID could be entered and prediction returned
 
 ## For More Information
 
