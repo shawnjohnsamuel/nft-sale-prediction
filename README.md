@@ -1,5 +1,5 @@
 ![NFT Sale Prediction](images/NFT_Banner.png)
-# Predicting whether an NFT will sell
+# Predicting If An NFT Will Sell
 **Author:** Shawn Samuel
 
 ## Overview
