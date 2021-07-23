@@ -203,7 +203,6 @@ def evaluate(name, estimator, X_train, X_test, y_train, y_test, use_decision_fun
     predict_proba in order to get the output needed for roc_auc_score
     If use_decision_function == 'skip', then it ignores calculating the roc_auc_score
     
-    *Created for Spotify Project*
     '''
     
     # grab predictions
@@ -254,7 +253,6 @@ def plot_feature_imp(estimator, X):
     '''
     Plot feature importance of model
     
-    *Created for Spotify Project*
     '''
     
     # capture feature importances
