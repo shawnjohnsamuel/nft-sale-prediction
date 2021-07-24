@@ -182,8 +182,34 @@ def arima_eval(name, ts, train, test, model, periods=0, log=False, library='pmda
 
 def crossval(estimator, X, y, cv=5, scoring='precision'):
     '''
-    Cross Fold Score with a default of 5 folds and score set to precision
+    Print cross validation scores with a default of 5 folds and score set to precision
+    
+    Parameters
+    ----------
+    estimator : estimator object.
+        This is assumed to implement the scikit-learn estimator interface.
+    
+    X : {array-like, sparse matrix} of shape (n_samples, n_features)
+        The training input samples. Internally, it will be converted to
+        ``dtype=np.float32`` and if a sparse matrix is provided
+        to a sparse ``csc_matrix``.
+
+    y : array-like of shape (n_samples,) or (n_samples, n_outputs)
+        The target values (class labels) as integers or strings.
+    
+    cv : int, cross-validation generator or an iterable, default=5
+        Determines the cross-validation splitting strategy.
+
+    scoring : scoringstr or callable, default='precision'
+        A str (see model evaluation documentation) or a scorer callable object
+    
+    Outputs
+    -------
+    - Prints average score with standard deviation
+    - Prints list of all scores
+    
     '''
+    
     cv_scores = cross_val_score(estimator, X, y, cv=cv, scoring=scoring)
     print(f"Avg {scoring.capitalize()} Score of {cv_scores.mean():.4f} with Std Dev of {cv_scores.std():.4f}")
     print('')
@@ -199,9 +225,42 @@ def evaluate(name, estimator, X_train, X_test, y_train, y_test, use_decision_fun
     Evaluation function to show a few scores for both the train and test set
     Also shows a confusion matrix for the test set
     
-    use_decision_function allows you to toggle whether you use decision_function or
-    predict_proba in order to get the output needed for roc_auc_score
-    If use_decision_function == 'skip', then it ignores calculating the roc_auc_score
+    Parameters
+    ----------
+    name : str
+        A name for the model that will be used to differentiate in the 
+        running dataframe
+
+    estimator : estimator object
+        This is assumed to implement the scikit-learn estimator interface.
+
+    X_train : {array-like, sparse matrix} of shape (n_samples, n_features)
+        The training input samples. Internally, it will be converted to
+        ``dtype=np.float32`` and if a sparse matrix is provided
+        to a sparse ``csc_matrix``.
+        
+    X_test : {array-like, sparse matrix} of shape (n_samples, n_features)
+        The test input samples. Internally, it will be converted to
+        ``dtype=np.float32`` and if a sparse matrix is provided
+        to a sparse ``csc_matrix``.
+
+    y_train : array-like of shape (n_samples,) or (n_samples, n_outputs)
+        The training target values (class labels) as integers or strings.
+
+    y_test : array-like of shape (n_samples,) or (n_samples, n_outputs)
+        The testing target values (class labels) as integers or strings.
+    
+    use_decision_function : str 'skip', 'yes' or 'no', default='yes'
+        use_decision_function allows you to toggle whether you use decision_function ('yes) 
+        or predict_proba ('no') in order to get the output needed for roc_auc_score
+        If use_decision_function == 'skip', then it ignores calculating the roc_auc_score
+
+    
+    Outputs
+    -------
+    - Prints confusion matrix plot of the test set
+    - Prints precision, F1 and ROC-AUC scores in a table
+    - Prints dataframe of all testing scores of current and previous models
     
     '''
     
@@ -252,6 +311,19 @@ def evaluate(name, estimator, X_train, X_test, y_train, y_test, use_decision_fun
 def plot_feature_imp(estimator, X):
     '''
     Plot feature importance of model
+    
+    Parameters
+    ----------
+    estimator : estimator object
+        This is assumed to implement the scikit-learn estimator interface.
+
+    X : {array-like, sparse matrix} of shape (n_samples, n_features)
+        The input samples
+        
+        
+    Output
+    ------
+    - Prints plot of features in order of importance
     
     '''
     
