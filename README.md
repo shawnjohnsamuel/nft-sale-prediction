@@ -1,3 +1,4 @@
+![NFT Sale Prediction](images/0_banner.png)
 # Predicting if an NFT will sell on OpenSea
 **Author:** Shawn Samuel
 
