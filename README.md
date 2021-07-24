@@ -1,4 +1,4 @@
-![NFT Sale Prediction](images/0_banner.png)
+
 # Predicting if an NFT will sell on OpenSea
 **Author:** Shawn Samuel
 
@@ -60,5 +60,6 @@ For additional info, contact Shawn Samuel at [shawnjohnsamuel@gmail.com](mailto:
 ├── notebooks
 ├── README.md
 ├── project-notebook.ipynb
-└── project-presentation.pdf
+├── project-presentation.pdf
+└── sjs_utilities.py
 ```
