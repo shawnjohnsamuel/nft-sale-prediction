@@ -61,5 +61,5 @@ For additional info, contact Shawn Samuel at [shawnjohnsamuel@gmail.com](mailto:
 ├── README.md
 ├── project-notebook.ipynb
 ├── project-presentation.pdf
-└── sjs_utilities.py
+└── sjs_utilities.py 
 ```
