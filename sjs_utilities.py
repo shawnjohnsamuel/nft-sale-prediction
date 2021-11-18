@@ -35,9 +35,9 @@ def arima_eval(name, ts, train, test, model, periods=0, log=False, library='pmda
     - train - time series train set (can be differenced or logged)
     - test - time series test set (can be differenced or logged)
     - model - trained arima model
-    - periods - number of differene (default 0 = none)
+    - periods - number of differene (default = 0)
     - log - boolean if train & test have been logged
-    - library - 'pmdarima' or 'statsmodels'
+    - library - 'pmdarima' or 'statsmodels' (default = 'pmdarima')
     
     Outputs:
     - plot of train, test & predictons
@@ -201,7 +201,7 @@ def crossval(estimator, X, y, cv=5, scoring='precision'):
         Determines the cross-validation splitting strategy.
 
     scoring : scoringstr or callable, default='precision'
-        A str (see model evaluation documentation) or a scorer callable object
+         A str (see model evaluation documentation) or a scorer callable object
     
     Outputs
     -------
